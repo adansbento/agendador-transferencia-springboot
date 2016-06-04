@@ -1,13 +1,12 @@
 package br.com.escambo.service;
 
-import br.com.escambo.bo.RetornoTransferenciaBo;
-import br.com.escambo.bo.TransferenciaBo;
-import br.com.escambo.entity.Transferencia;
+import br.com.escambo.model.RetornoTransferencia;
+import br.com.escambo.model.Transferencia;
 
 /**
  * Created by adansbento on 31/05/16.
  */
 public interface TransferenciaService {
 
-    RetornoTransferenciaBo efetuarTransferencia(TransferenciaBo transferencia);
+    RetornoTransferencia efetuarTransferencia(Transferencia transferencia);
 }

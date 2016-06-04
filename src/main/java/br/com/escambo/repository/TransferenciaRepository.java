@@ -1,10 +1,26 @@
 package br.com.escambo.repository;
 
-import org.springframework.stereotype.Repository;
+import br.com.escambo.model.Transferencia;
+import org.springframework.stereotype.Component;
 
-/**
- * Created by adansbento on 31/05/16.
- */
-public interface TransferenciaRepository {
+import java.util.ArrayList;
+import java.util.List;
 
+@Component
+public class TransferenciaRepository {
+
+    private List<Transferencia>  transferencias = new ArrayList<>(0);
+
+
+    public void novaTransferencia(Transferencia transferencia){
+
+        long id = transferencias.size()+1;
+        transferencia.setId(id);
+        transferencias.add(transferencia);
+
+    }
+
+    public List<Transferencia> getTransferencias() {
+        return transferencias;
+    }
 }

@@ -1,9 +1,6 @@
-package br.com.escambo.bo;
+package br.com.escambo.model;
 
-/**
- * Created by adansbento on 31/05/16.
- */
-public class RetornoTransferenciaBo {
+public class RetornoTransferencia {
 
     private int codigoRetorno;
     private String mensagem;
