@@ -48,9 +48,7 @@ controller('transferenciaController', function ($scope, $http) {
         var dateParts = usDate.split(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);
         return dateParts[3] + "-" + dateParts[1] + "-" + dateParts[2];
     }
-    $scope.dropboxitemselected = function (itemSelecionado) {
-        alert(itemSelecionado);
-    };
+
 
     $scope.listarTipoTaxa();
     $scope.listarTransferencia();
