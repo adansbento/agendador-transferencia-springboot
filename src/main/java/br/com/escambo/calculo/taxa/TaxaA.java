@@ -13,8 +13,8 @@ public class TaxaA implements Taxavel {
      */
     @Override
     public BigDecimal calcularTaxa(Transferencia transferencia) {
-        BigDecimal valorTotalPorcentage = transferencia.getValor().divide(new BigDecimal(100)).multiply(new BigDecimal(3));
+        BigDecimal valorTotalPorcentage = transferencia.getValor().divide(new BigDecimal("100")).multiply(new BigDecimal("3"));
 
-        return valorTotalPorcentage.add(new BigDecimal(2));
+        return valorTotalPorcentage.add(new BigDecimal("2"));
     }
 }

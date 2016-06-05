@@ -1,15 +1,19 @@
 package br.com.escambo.model;
 
 import br.com.escambo.calculo.TipoTaxa;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Transferencia  implements Serializable {
+public class Transferencia implements Serializable {
 
     private Long id;
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataCadastro = LocalDate.now();
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataTransferencia;
     private String contaDestino;
     private String contaOrigem;
@@ -20,6 +24,21 @@ public class Transferencia  implements Serializable {
 
     public Transferencia() {
 
+    }
+
+
+    @Override
+    public String toString() {
+        return "Transferencia{" +
+                "id=" + id +
+                ", dataCadastro=" + dataCadastro +
+                ", dataTransferencia=" + dataTransferencia +
+                ", contaDestino='" + contaDestino + '\'' +
+                ", contaOrigem='" + contaOrigem + '\'' +
+                ", valor=" + valor +
+                ", taxa=" + taxa +
+                ", tipo=" + tipo +
+                '}';
     }
 
     public Long getId() {

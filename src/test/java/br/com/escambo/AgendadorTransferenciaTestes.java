@@ -1,9 +1,11 @@
 package br.com.escambo;
 
 
+import br.com.escambo.calculo.TipoTaxa;
 import br.com.escambo.calculo.taxa.TaxaA;
 import br.com.escambo.model.Transferencia;
 import br.com.escambo.repository.TransferenciaRepository;
+import br.com.escambo.service.TransferenciaService;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -11,29 +13,43 @@ import java.time.LocalDate;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 
 public class AgendadorTransferenciaTestes {
 
 
-    /**
-     * Criar nova transferencia
-     */
     @Test
-    public void criarTransferencia(){
-        TransferenciaRepository transferenciaRepository = new TransferenciaRepository();
+    public void criarTransferenciaService(){
+
+        TransferenciaService transferenciaService = new TransferenciaService();
 
         Transferencia transferencia = new Transferencia();
-        transferencia.setValor(new BigDecimal(100));
+        transferencia.setValor(new BigDecimal("100.00"));
         transferencia.setContaOrigem("12345-6");
         transferencia.setContaDestino("65432-1");
         transferencia.setDataTransferencia(LocalDate.now());
-        transferencia.setTaxa(new TaxaA().calcularTaxa(transferencia));
+        transferencia.setTipo(TipoTaxa.A);
 
-        transferenciaRepository.novaTransferencia(transferencia);
-        assertNotNull(transferenciaRepository.getTransferencias());
-        assertEquals("A lista de transferencia tem que ter 1 elemento",1,transferenciaRepository.getTransferencias().size());
+        transferenciaService.novaTransferencia(transferencia);
+        assertNotNull(transferenciaService.obterTransferencias());
+        assertTrue("A lista de transferencia tem que ter 1 elemento",transferenciaService.obterTransferencias().size()==1);
 
+    }
+
+    @Test
+    public void criarTransferenciaServiceRetorno(){
+
+        TransferenciaService transferenciaServiceImpl = new TransferenciaService();
+
+        Transferencia transferencia = new Transferencia();
+        transferencia.setValor(new BigDecimal("100.00"));
+        transferencia.setContaOrigem("12345-6");
+        transferencia.setContaDestino("65432-1");
+        transferencia.setDataTransferencia(LocalDate.now());
+        transferencia.setTipo(TipoTaxa.A);
+        assertNotNull(transferenciaServiceImpl.novaTransferencia(transferencia));
+        assertEquals("A chamada do metodo tem que retorna uma mensagem sucesso","Sucesso",transferenciaServiceImpl.novaTransferencia(transferencia).getMensagem());
 
     }
 }

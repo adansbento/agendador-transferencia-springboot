@@ -35,20 +35,22 @@ public class TaxaC implements Taxavel {
         BigDecimal taxa = null;
 
         if(diferencaDias <= 5){
-            taxa = new BigDecimal(8.3);
+            taxa = new BigDecimal("8.3");
         }else if (diferencaDias <= 10){
-            taxa = new BigDecimal(7.4);
+            taxa = new BigDecimal("7.4");
         }else if (diferencaDias <= 15){
-            taxa = new BigDecimal(6.7);
+            taxa = new BigDecimal("6.7");
         }else if (diferencaDias <= 20){
-            taxa = new BigDecimal(5.4);
+            taxa = new BigDecimal("5.4");
         }else if (diferencaDias <= 25){
-            taxa = new BigDecimal(4.3);
-        }else if (diferencaDias > 30){
-            taxa = new BigDecimal(2.1);
+            taxa = new BigDecimal("4.3");
+        }else if (diferencaDias <= 30){
+            taxa = new BigDecimal("2.1");
+        }else{
+            taxa = new BigDecimal("1.2");
         }
 
 
-        return transferencia.getValor().divide(new BigDecimal(100)).multiply(taxa);
+        return transferencia.getValor().divide(new BigDecimal("100")).multiply(taxa);
     }
 }

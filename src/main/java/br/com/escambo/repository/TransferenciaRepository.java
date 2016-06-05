@@ -1,12 +1,10 @@
 package br.com.escambo.repository;
 
 import br.com.escambo.model.Transferencia;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
 public class TransferenciaRepository {
 
     private List<Transferencia>  transferencias = new ArrayList<>(0);
@@ -20,7 +18,7 @@ public class TransferenciaRepository {
 
     }
 
-    public List<Transferencia> getTransferencias() {
+    public List<Transferencia> obterTransferencias() {
         return transferencias;
     }
 }
