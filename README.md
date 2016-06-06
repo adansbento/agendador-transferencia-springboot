@@ -18,7 +18,7 @@ Linha de comando:
 
 	1 - Vamos clonar o repositorio
 
-	$ git clone git@github.com:adansbento/agendador-transferencia-springboot.git
+	$ git clone https://github.com/adansbento/agendador-transferencia-springboot.git
 
 
 	2 -Entra na pasta do repositorio:
