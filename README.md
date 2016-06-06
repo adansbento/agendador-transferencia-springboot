@@ -4,15 +4,15 @@
 ##Instruções para instalação
 
 O projeto foi desenvolvido usando o Spring Boot para facilitar a instalação, que pode se feita
-de duas maneiras,usandao uma IDE ou através de linha de comando.
+de duas maneiras,usando uma IDE ou através de linha de comando.
 
 
 
 pré requesitos:
 
 	- Java 8
-	- Maven 2
-	- Git 2.7.4
+	- Maven 2+
+	- Git 2+
 	
 Linha de comando:
 
@@ -48,7 +48,7 @@ IDE:
 
 	1 - Clonar o repositorio
 
-	$ git clone git@github.com:adansbento/agendador-transferencia-springboot.git
+	$ git clone https://github.com/adansbento/agendador-transferencia-springboot.git
 
 
 	2 - Importa o projeto com maven
